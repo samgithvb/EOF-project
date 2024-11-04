@@ -1,0 +1,39 @@
+.header {
+    font-size: large;
+    margin: 450;
+    padding: 400;
+  }
+nav {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+}
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other on smaller screens (600px wide or less) */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+.logo{
+  float: left;
+
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

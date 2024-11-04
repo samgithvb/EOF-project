@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2> Add a New Item </h2>
+
+<form method = "post">
+
+<label for= "name">name</label>
+<input type = "text" name = "name" id = "name" required>
+
+<label for= "description">Platform</Title></label> 
+<input type = "text" name = "description" id = "description" required>
+
+<label for= "origin">origin</Title></label> 
+<input type = "text" name = "origin" id = "origin" required>
+
+<label for= "age">age</label></Title></label> 
+<input type = "number" name = "age" id = "age" required>
+
+<label for= "provenece">Provenance</Title></label> 
+<input type = "text" name = "provenance" id = "provenance" required>
+<button type = "submit">Add item</button>
+
+</form>
+{% endblock %}
+

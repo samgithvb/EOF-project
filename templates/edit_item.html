@@ -1,0 +1,27 @@
+<!-- Extending Base layout-->
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Heading for the edit game field-->
+<h2> Edit item</h2>
+<!-- Form to update the game details-->
+<form method = "post">
+    <!-- Input fields with the current game data filled in-->
+    <label for = "name">Name</label>
+    <input type = "text" name = "name" id = "name" value = "{{ item.name }}" required>
+    
+    <label for = "description">Description</label>
+     <input type = "text" name = "descrition" id = "description" value = "{{ item.description }}" required>
+    
+     <label for = "origin">Origin</label>
+    <input type = "text" name = "origin" id = "origin" value = "{{ item.origin }}" required>
+    
+    <label for = "age">Age</label>
+    <input type = "number" name = "age" id = "age" value = "{{ item.age }}" required>
+    
+    <label for = "provenance">Provenance</label>
+    <input type = "text" name = "provenance" id = "provenance" value = "{{ item.provenance }}" required>
+    <!-- Button to submit the updated game details-->
+    <button type = "submit">Update Item</button>
+
+</form>

@@ -1,0 +1,19 @@
+# Route to add a new game to the databse ('/add') - handles both GET (show the form) and POST (submit the form)
+@app.route('/add', methods = ('GET', 'POST'))
+def add_game():
+    # If the form was submitted (POST request)
+    if request.method == 'POST':
+        # Get form data: title, platform, genre, year, sales
+        title = request.form['title']
+        platform = request.form['platform']
+        year = request.form['year']
+        sales = request.form['sales']
+
+        # If any field is missing, shwow an error message
+        if not title or not platform or not genre or not year or not sales:
+            flash('All fields are required ')
+        else:
+            # If everything is filled im, insert the new game into the database
+            conn = get_db_connection()
+            conn.execute('INSERT INTO games (title, platform, genre, year, sales) VALUES (?, ?, ?, ?, ?, ?)'
+            (title, platform, genre, year, sales)) 

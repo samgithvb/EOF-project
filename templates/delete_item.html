@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang = "en">
+# Route to delete a game from the database ('/delete/<int : id>'</int>')
+# deletes a item by its id
+@app.route('/delete/<int : id>>', methods = ('POST',))
+def delete_item(id):
+    # Connect the database and delete the game with the given id
+    conn = get_db_connection()
+    conn.execute('DELETE FROM games WHERE id = ?', (id,))
+    # Save the changes to the database
+    conn.commit()
+    # Close the connection
+    conn.close()
+    # Show a success message
+    flash('Game deleted successfully!')]
+    # Redirect to the 'view_games' page
+    retun redirect(url_for('view_games'))
+
+# Run the flask app in debug mode ( so we can see errors easily while developing)
+if __name__ == '__main__' :
+    app.run(debug=True)
+</html>
